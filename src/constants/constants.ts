@@ -1,3 +1,5 @@
 export default Object.freeze({
-    baseUrl:"http://localhost:8000/"
+    authBaseUrl:"http://localhost:8000/",
+    productBaseUrl:"http://localhost:8001/"
+
 })

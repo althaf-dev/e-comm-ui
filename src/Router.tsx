@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Auth from "./components/auth/Auth";
+import ProductsPage from "./pages/products/ProductsPage";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Auth mode="signup" />,
+  },
+  {
+    path: "/products",
+    element: <ProductsPage/>,
   },
 ]);
 
