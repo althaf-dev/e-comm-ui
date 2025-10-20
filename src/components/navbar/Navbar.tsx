@@ -20,7 +20,7 @@ function Navbar() {
   return (
     <AppBar>
       <Toolbar sx={{ justifyContent: 'space-between', color: 'white' }}>
-        <Typography>Home</Typography>
+        <NavLink color='white' style={{color:"white"}} to={'/'}>Home</NavLink>
         <NavLink color='white' style={{color:"white"}} to={'/products'}>Products</NavLink>
         <Stack flexDirection={'row'} gap={4} ml={12}>
           <Stack

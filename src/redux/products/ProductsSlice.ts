@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Products {
   id: string;
@@ -13,12 +13,16 @@ interface ProductState {
   loading: boolean;
   error: null | string;
   products: Products[];
+  addLoading: boolean;
+  addError: null | string;
 }
 
 const initialState: ProductState = {
   loading: false,
   error: null,
   products: [],
+  addLoading: false,
+  addError: null,
 };
 
 const productSlice = createSlice({
@@ -28,17 +32,30 @@ const productSlice = createSlice({
     getProductList: (state) => {
       state.loading = true;
     },
-    getProductListSucces: (state, action) => {
+    getProductListSucces: (state, action: PayloadAction<Products[]>) => {
       state.products = action.payload;
       state.loading = false;
     },
-    getProductListFailure: (state, action) => {
+    getProductListFailure: (state, action: PayloadAction<string>) => {
       state.error = action.payload;
       state.loading = false;
+    },
+    addProductRequest: (state, action: PayloadAction<Products>) => {
+      state.addLoading = true;
+      state.addError = null;
+      // action.payload contains the product to add
+    },
+    addProductSuccess: (state, action: PayloadAction<Products>) => {
+      state.products.push(action.payload);
+      state.addLoading = false;
+    },
+    addProductFailure: (state, action: PayloadAction<string>) => {
+      state.addError = action.payload;
+      state.addLoading = false;
     },
   },
 });
 
-export const { getProductList, getProductListSucces, getProductListFailure } =
+export const { getProductList, getProductListSucces, getProductListFailure, addProductRequest, addProductSuccess, addProductFailure } =
   productSlice.actions;
 export default productSlice.reducer;

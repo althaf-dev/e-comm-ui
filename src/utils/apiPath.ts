@@ -3,6 +3,7 @@ export default Object.freeze({
     LOGOUT: "api/v1/logout",
     REFRESH: "api/v1/refresh",
     SIGNUP: "api/v1/signup",
-    PRODUCTS:"api/v1/products"
+    PRODUCTS:"api/v1/products",
+    ADMIN_PRODUCTS: "api/v1/products/admin"
 
 })
