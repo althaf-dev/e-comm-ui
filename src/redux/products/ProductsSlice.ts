@@ -40,7 +40,7 @@ const productSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     },
-    addProductRequest: (state, action: PayloadAction<Products>) => {
+    addProductRequest: (state, _action: PayloadAction<Products>) => {
       state.addLoading = true;
       state.addError = null;
       // action.payload contains the product to add

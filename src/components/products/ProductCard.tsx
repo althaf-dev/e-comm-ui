@@ -3,7 +3,6 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  CardHeader,
   Typography,
 } from '@mui/material';
 import { Products } from '../../redux/products/ProductsSlice';
