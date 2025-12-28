@@ -8,6 +8,8 @@ COPY src src
 
 COPY package.json package.json
 
+COPY index.html index.html
+
 COPY tsconfig.json tsconfig.json
 
 COPY tsconfig.app.json tsconfig.app.json
