@@ -13,6 +13,7 @@ phases:
       - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
       - REGISTRY_URI=$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
       - REPO_URI=$REGISTRY_URI/$REPO_NAME
+      - aws sts get-caller-identity
       - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $REGISTRY_URI
 
   build:
