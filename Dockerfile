@@ -12,7 +12,7 @@ COPY tsconfig.app.json tsconfig.app.json
 
 COPY vite.config.ts vite.config.ts
 
-COPY eslin.config.js  eslin.config.js
+COPY eslint.config.js  eslint.config.js
 
 COPY package-lock.json package-lock.json
 
