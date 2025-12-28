@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+AWS="/usr/local/bin/aws"
+
+ACCOUNT_ID=$($AWS sts get-caller-identity --query Account --output text)
 REGION=ap-south-1
 REPO_NAME=ui-app
 IMAGE="$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:latest"
