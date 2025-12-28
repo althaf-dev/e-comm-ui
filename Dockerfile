@@ -4,6 +4,8 @@ WORKDIR /ui-app
 
 COPY server server
 
+COPY src src
+
 COPY package.json package.json
 
 COPY tsconfig.json tsconfig.json
