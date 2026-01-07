@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Sync to S3
-        run: aws s3 sync build/ s3://ui-app-demo-001 --delete
+        run: aws s3 sync dist/ s3://ui-app-demo-001 --delete
 
       - name: Invalidate CloudFront
         run: aws cloudfront create-invalidation --distribution-id E27ZOZIMBLRHC8 --paths "/*"
