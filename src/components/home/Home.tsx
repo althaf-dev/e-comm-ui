@@ -9,6 +9,8 @@ function Home() {
     <div>
 
       <h1> Welcome!  {user.username} !</h1>
+
+      <p>This application is dpeloyed on AWS S3</p>
    
     
      </div>
