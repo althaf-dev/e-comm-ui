@@ -18,7 +18,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::442042528989:role/github-s3-role   # <-- your role
+          role-to-assume: arn:aws:iam::442042528989:role/ui-deploy  # <-- your role
           aws-region: ap-south-1
 
       - name: Install deps
