@@ -22,14 +22,14 @@ function* logoutSaga():any{
     }
 }
 
-function* refreshRequestSaga(action: any): any {
+function* refreshRequestSaga(_action: any): any {
   try {
     const res = yield call(refreshApi);
     yield put(refreshSuccess(res.data));
   } catch (e) {
     if(e instanceof AxiosError)
       console.log(e)
-      yield put(loginFailure(e?.response?.data.error ||"some thing went wrong"));
+      yield put(loginFailure("some thing went wrong"));
     
       
   }
